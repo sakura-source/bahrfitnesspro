@@ -4,6 +4,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
+/// ProfileScreen is a StatefulWidget that allows users to view and edit their profile information,
+/// including their name, email, weight, height, and profile picture.
 class ProfileScreen extends StatefulWidget {
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
@@ -29,6 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     _fetchUserDetails();
   }
 
+  /// Fetches the user's weight and height from Firestore and updates the state.
   Future<void> _fetchUserDetails() async {
     DocumentSnapshot doc = await _firestore.collection('users').doc(_user.uid).get();
     setState(() {
@@ -37,6 +40,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     });
   }
 
+  /// Updates the user's details in Firestore with the current state values.
   Future<void> _updateUserDetails() async {
     await _firestore.collection('users').doc(_user.uid).update({
       'name': _name,
@@ -46,6 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     });
   }
 
+  /// Allows the user to pick an image from the gallery and updates the profile picture.
   Future<void> _uploadProfilePicture() async {
     final pickedFile = await _picker.getImage(source: ImageSource.gallery);
     if (pickedFile != null) {

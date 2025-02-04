@@ -8,9 +8,9 @@ class DietTrackingScreen extends StatefulWidget {
 
 class _DietTrackingScreenState extends State<DietTrackingScreen> {
   final _formKey = GlobalKey<FormState>();
-  String _mealName;
-  int _calories;
-  String _time;
+  String mealName;
+  int calories;
+  String time;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class _DietTrackingScreenState extends State<DietTrackingScreen> {
                   return null;
                 },
                 onSaved: (value) {
-                  _mealName = value;
+                  mealName = value;
                 },
               ),
               TextFormField(
@@ -46,7 +46,7 @@ class _DietTrackingScreenState extends State<DietTrackingScreen> {
                   return null;
                 },
                 onSaved: (value) {
-                  _calories = int.parse(value);
+                  calories = int.parse(value);
                 },
               ),
               TextFormField(
@@ -58,7 +58,7 @@ class _DietTrackingScreenState extends State<DietTrackingScreen> {
                   return null;
                 },
                 onSaved: (value) {
-                  _time = value;
+                  time = value;
                 },
               ),
               SizedBox(height: 20),
@@ -82,9 +82,9 @@ class _DietTrackingScreenState extends State<DietTrackingScreen> {
 
   void _saveMealToFirestore() async {
     await FirebaseFirestore.instance.collection('meals').add({
-      'mealName': _mealName,
-      'calories': _calories,
-      'time': _time,
+      'mealName': mealName,
+      'calories': calories,
+      'time': time,
       'timestamp': FieldValue.serverTimestamp(),
     });
     ScaffoldMessenger.of(context).showSnackBar(

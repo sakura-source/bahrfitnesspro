@@ -22,6 +22,7 @@ class _HormoneManagementScreenState extends State<HormoneManagementScreen> {
       'benefits': 'Improved bone density, reduced hot flashes',
       'risks': 'Blood clots, stroke, breast cancer'
     },
+    // Add more hormone data as needed
   ];
 
   @override

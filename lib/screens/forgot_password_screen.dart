@@ -8,7 +8,7 @@ class ForgotPasswordScreen extends StatefulWidget {
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final _auth = FirebaseAuth.instance;
-  String email;
+  String _email;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             TextField(
               keyboardType: TextInputType.emailAddress,
               onChanged: (value) {
-                email = value;
+                _email = value;
               },
               decoration: InputDecoration(
                 hintText: 'Enter your email',
@@ -34,7 +34,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             ElevatedButton(
               onPressed: () async {
                 try {
-                  await _auth.sendPasswordResetEmail(email: email);
+                  await _auth.sendPasswordResetEmail(email: _email);
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text('Password reset email sent!'),

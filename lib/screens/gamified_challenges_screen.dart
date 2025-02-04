@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class GamifiedChallengesScreen extends StatelessWidget {
   @override
@@ -45,23 +46,26 @@ class GamifiedChallengesScreen extends StatelessWidget {
 class LeaderboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Sample leaderboard data
-    List<Map<String, String>> leaderboardData = [
-      {'name': 'User1', 'score': '1000'},
-      {'name': 'User2', 'score': '900'},
-      {'name': 'User3', 'score': '800'},
-    ];
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Leaderboard'),
       ),
-      body: ListView.builder(
-        itemCount: leaderboardData.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(leaderboardData[index]['name']),
-            trailing: Text(leaderboardData[index]['score']),
+      body: StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance.collection('leaderboard').snapshots(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return Center(child: CircularProgressIndicator());
+          }
+          var leaderboardData = snapshot.data.docs;
+          return ListView.builder(
+            itemCount: leaderboardData.length,
+            itemBuilder: (context, index) {
+              var data = leaderboardData[index].data();
+              return ListTile(
+                title: Text(data['name']),
+                trailing: Text(data['score'].toString()),
+              );
+            },
           );
         },
       ),
@@ -120,7 +124,11 @@ class _CreateChallengeScreenState extends State<CreateChallengeScreen> {
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
                     _formKey.currentState.save();
-                    // Save challenge to Firestore
+                    FirebaseFirestore.instance.collection('challenges').add({
+                      'name': _challengeName,
+                      'description': _challengeDescription,
+                      'timestamp': FieldValue.serverTimestamp(),
+                    });
                     Navigator.pop(context);
                   }
                 },
