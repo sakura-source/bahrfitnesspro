@@ -45,6 +45,40 @@ class MentalWellnessScreen extends StatelessWidget {
               },
               child: Text('Listen Now'),
             ),
+            SizedBox(height: 32),
+            Text(
+              'Breathing Exercises',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 16),
+            Text(
+              'Practice breathing exercises to reduce stress and improve focus.',
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to breathing exercises screen
+              },
+              child: Text('Start Breathing Exercises'),
+            ),
+            SizedBox(height: 32),
+            Text(
+              'Mood Journal',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 16),
+            Text(
+              'Keep a daily journal to track your mood and thoughts.',
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to mood journal screen
+              },
+              child: Text('Open Mood Journal'),
+            ),
           ],
         ),
       ),
