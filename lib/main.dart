@@ -50,11 +50,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-Future<void> initializeFirebase() async {
-  try {
-    await Firebase.initializeApp();
-  } catch (e) {
-    print("Firebase initialization error: $e");
-  }
-}
