@@ -1,5 +1,73 @@
-# Object file
-*.o
+# Flutter/Dart specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
 
-# Ada Library Information
-*.ali
+# iOS specific
+ios/Flutter/.last_build_id
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+
+# Xcode specific
+**/xcuserdata/
+**/DerivedData/
+**/.vscode/
+*.xcworkspace
+*.xcuserstate
+
+# Android specific
+android/.gradle/
+android/.idea/
+android/local.properties
+android/app/proguard-rules.pro
+android/app/google-services.json
+android/key.properties
+
+# VS Code
+.vscode/
+.history/
+
+# macOS
+macos/Flutter/ephemeral/
+macos/Flutter/Flutter.podspec
+macos/Flutter/App.framework
+macos/Flutter/Flutter.framework
+macos/Flutter/.last_build_id
+
+# Web specific
+web/.dart_tool/
+web/.packages
+web/build/
+
+# Windows
+windows/flutter/generated_plugin_registrant.cc
+windows/.flutter-plugins-dependencies
+windows/flutter/ephemeral/
+
+# Linux
+linux/flutter/generated_plugin_registrant.cc
+linux/.flutter-plugins-dependencies
+linux/flutter/ephemeral/
+
+# Firebase specific (optional)
+firebase_app/
+.firebase/
+
+# JetBrains IDE
+.idea/
+*.iml
+
+# Temporary files
+*.log
+*.tmp
+*.swp
+*.lock
+*.bak
+*.orig
