@@ -1,7 +1,3 @@
-Finalized README.md for BahrFitnessPRO
-
-Here’s a beautifully designed and detailed README.md that reflects professionalism, depth, and creativity. It’s written to impress anyone who views it.
-
 BahrFitnessPRO 🏋️‍♂️🌊
 
 Redefining Fitness and Nutrition Management
