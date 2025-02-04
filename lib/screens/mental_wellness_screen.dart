@@ -79,6 +79,23 @@ class MentalWellnessScreen extends StatelessWidget {
               },
               child: Text('Open Mood Journal'),
             ),
+            SizedBox(height: 32),
+            Text(
+              'Mental Wellness Tools',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 16),
+            Text(
+              'Access various mental wellness tools to improve your mental health.',
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to mental wellness tools screen
+              },
+              child: Text('Explore Tools'),
+            ),
           ],
         ),
       ),
