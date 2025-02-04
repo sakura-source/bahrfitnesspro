@@ -30,4 +30,20 @@ class UserProvider with ChangeNotifier {
     _user = null;
     notifyListeners();
   }
+
+  Future<void> saveWorkoutLog(Map<String, dynamic> workoutData) async {
+    try {
+      await _db.collection('workouts').add(workoutData);
+    } catch (e) {
+      print('Error saving workout log: $e');
+    }
+  }
+
+  Future<void> saveMealLog(Map<String, dynamic> mealData) async {
+    try {
+      await _db.collection('meals').add(mealData);
+    } catch (e) {
+      print('Error saving meal log: $e');
+    }
+  }
 }

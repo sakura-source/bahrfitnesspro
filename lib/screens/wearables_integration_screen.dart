@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wearable_integration/wearable_integration.dart';
 
 class WearablesIntegrationScreen extends StatefulWidget {
   @override
@@ -6,11 +7,27 @@ class WearablesIntegrationScreen extends StatefulWidget {
 }
 
 class _WearablesIntegrationScreenState extends State<WearablesIntegrationScreen> {
-  // Placeholder for wearable data
   Map<String, dynamic> wearableData = {
     'heartRate': 0,
     'caloriesBurned': 0,
   };
+
+  @override
+  void initState() {
+    super.initState();
+    syncWearableData();
+  }
+
+  Future<void> syncWearableData() async {
+    try {
+      var data = await WearableIntegration.getWearableData();
+      setState(() {
+        wearableData = data;
+      });
+    } catch (e) {
+      print('Error syncing wearable data: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
