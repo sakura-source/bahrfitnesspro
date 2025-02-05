@@ -18,19 +18,53 @@ class GamifiedChallengesScreen extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Navigate to leaderboard screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LeaderboardScreen()),
+                );
               },
               child: Text('View Leaderboard'),
             ),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Navigate to create challenge screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CreateChallengeScreen()),
+                );
               },
               child: Text('Create Challenge'),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class LeaderboardScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Leaderboard'),
+      ),
+      body: Center(
+        child: Text('Leaderboard Screen'),
+      ),
+    );
+  }
+}
+
+class CreateChallengeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Create Challenge'),
+      ),
+      body: Center(
+        child: Text('Create Challenge Screen'),
       ),
     );
   }
