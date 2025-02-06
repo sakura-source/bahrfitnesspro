@@ -167,3 +167,46 @@ For support or inquiries:
 	•	Twitter: @AmirElokdsha
 
 🌟 Ready to take your fitness journey to the next level? Join BahrFitnessPRO today! 🚀
+
+## New Features and Enhancements
+
+### New Screens
+1. **Signup Screen**: A registration screen for new users to create accounts tailored to their fitness goals.
+2. **Forgot Password Screen**: A screen for account recovery via email or phone.
+3. **Profile Screen**: Enhanced user profile management to include preferences, goals, and health stats.
+4. **Settings Screen**: App customization options, including Dark Mode and notification preferences.
+5. **Workout Tracking Screen**: A screen for users to log and monitor their exercise routines.
+6. **Diet Tracking Screen**: Enable users to log meals, monitor calorie intake, and view macronutrient breakdown.
+7. **Progress Photos Screen**: A gallery-style screen for users to upload and compare progress photos.
+
+### Backend Services
+1. **Notification Service**: Send reminders for workouts, meal tracking, and updates.
+2. **Analytics Service**: Provide advanced insights on user progress and engagement trends.
+3. **AI Recommendation Service**: Generate personalized fitness and diet recommendations using AI.
+4. **Pagination Service**: Optimize the app to handle large datasets smoothly.
+
+### UI/UX Enhancements
+1. **Dark Mode**: Introduce a theme toggle for better accessibility and aesthetics.
+2. **Splash Screen**: Design an engaging loading screen reflecting the app's branding.
+3. **Custom Error Screen**: Handle errors with user-friendly messages and guidance.
+4. **Reusable Components**:
+   - **Custom Button**: A consistent button style across the app.
+   - **Progress Card**: Visualize user progress with metrics like weight loss or muscle gain.
+   - **Chart Widget**: Display trends and stats through interactive charts.
+   - **Error Message Widget**: Provide contextual error messages.
+
+### Testing and Performance Improvements
+1. **Unit Tests**: Write unit tests for the newly added services to ensure robustness.
+2. **UI Tests**: Develop UI tests for the screens to validate usability and responsiveness.
+3. **Lazy Loading**: Implement lazy loading for assets and datasets to enhance performance.
+
+### CI/CD and DevOps
+1. **GitHub Actions Workflows**:
+   - Automate testing, linting, and deployment processes.
+   - Deploy updates to Firebase with beta distribution.
+   - Send notifications for build/test failures.
+   - Integrate tools like Prettier for consistent code formatting and Lint for enforcing coding standards.
+
+### Documentation Updates
+1. **README.md**: Add details about new features and enhancements. Include updated installation and usage instructions.
+2. **GitHub Wiki**: Provide technical documentation for developers. Detail the app's architecture and key modules.
