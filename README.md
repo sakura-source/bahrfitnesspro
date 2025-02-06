@@ -210,3 +210,29 @@ For support or inquiries:
 ### Documentation Updates
 1. **README.md**: Add details about new features and enhancements. Include updated installation and usage instructions.
 2. **GitHub Wiki**: Provide technical documentation for developers. Detail the app's architecture and key modules.
+
+### Running Tests
+
+To run the unit and integration tests for the various services and screens, follow these steps:
+
+1. Ensure that you have the Flutter SDK installed and set up on your machine. If not, follow the instructions on the [Flutter website](https://flutter.dev/docs/get-started/install) to install Flutter.
+
+2. Navigate to the root directory of the project in your terminal.
+
+3. Run the following command to execute all the tests:
+
+```bash
+flutter test
+```
+
+This command will run all the unit and integration tests present in the `tests` directory.
+
+Alternatively, you can run tests for specific services or screens by specifying the test file. For example, to run tests for the `AIRecommendationService`, use the following command:
+
+```bash
+flutter test tests/services/ai_recommendation_service_test.dart
+```
+
+Make sure to replace the path with the appropriate test file you want to run.
+
+Running these tests will help ensure the robustness and reliability of the various services and screens in the BahrFitnessPRO application.
