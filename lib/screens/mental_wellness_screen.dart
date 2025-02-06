@@ -24,7 +24,10 @@ class MentalWellnessScreen extends StatelessWidget {
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Navigate to stress and mood tracking screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => StressMoodTrackingScreen()),
+                );
               },
               child: Text('Track Now'),
             ),
@@ -41,12 +44,43 @@ class MentalWellnessScreen extends StatelessWidget {
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Navigate to guided meditation and relaxation screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GuidedMeditationScreen()),
+                );
               },
               child: Text('Listen Now'),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class StressMoodTrackingScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Stress and Mood Tracking'),
+      ),
+      body: Center(
+        child: Text('Stress and Mood Tracking Screen'),
+      ),
+    );
+  }
+}
+
+class GuidedMeditationScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Guided Meditation and Relaxation'),
+      ),
+      body: Center(
+        child: Text('Guided Meditation and Relaxation Screen'),
       ),
     );
   }

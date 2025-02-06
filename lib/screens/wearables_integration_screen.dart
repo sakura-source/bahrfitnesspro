@@ -12,6 +12,20 @@ class _WearablesIntegrationScreenState extends State<WearablesIntegrationScreen>
     'caloriesBurned': 0,
   };
 
+  // Simulate data synchronization with wearables
+  void syncWearableData() {
+    setState(() {
+      wearableData['heartRate'] = 75; // Simulated heart rate data
+      wearableData['caloriesBurned'] = 200; // Simulated calories burned data
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    syncWearableData(); // Sync data when the screen is initialized
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
