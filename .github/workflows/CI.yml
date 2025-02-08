@@ -17,46 +17,32 @@ jobs:
     - name: Setup Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: "3.7.0" # أو أحدث إصدار
+        flutter-version: "stable"
 
     # 2. Checkout code
     - name: Checkout Code
       uses: actions/checkout@v3
 
-    # 3. Install dependencies
+    # 3. Verify Flutter Installation
+    - name: Verify Flutter Installation
+      run: flutter doctor
+
+    # 4. Create Missing Flutter Files (Optional)
+    - name: Create Missing Flutter Files
+      run: flutter create .
+
+    # 5. Install Dependencies
     - name: Install Dependencies
       run: flutter pub get
 
-    # 4. Run lint checks
+    # 6. Upgrade Flutter and Dependencies
+    - name: Upgrade Flutter
+      run: flutter upgrade
+
+    # 7. Run lint checks
     - name: Analyze Code
       run: flutter analyze
 
-    # 5. Run tests
+    # 8. Run tests
     - name: Run Tests
       run: flutter test
-
-  deploy:
-    needs: build-test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
-    steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
-
-    - name: Setup Flutter
-      uses: subosito/flutter-action@v2
-      with:
-        flutter-version: "3.7.0"
-
-    - name: Build APK for Android
-      run: flutter build apk --release
-
-    - name: Build IPA for iOS
-      run: flutter build ios --release --no-codesign
-
-    - name: Deploy to Firebase
-      env:
-        FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_AUTH_TOKEN }}
-      run: |
-        firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app YOUR_FIREBASE_APP_ID
