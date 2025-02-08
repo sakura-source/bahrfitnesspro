@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WearablesIntegrationScreen extends StatefulWidget {
+  const WearablesIntegrationScreen({super.key});
+
   @override
   _WearablesIntegrationScreenState createState() => _WearablesIntegrationScreenState();
 }
@@ -30,14 +32,14 @@ class _WearablesIntegrationScreenState extends State<WearablesIntegrationScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Wearables Integration'),
+        title: const Text('Wearables Integration'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Heart Rate: ${wearableData['heartRate']} bpm'),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text('Calories Burned: ${wearableData['caloriesBurned']} kcal'),
           ],
         ),

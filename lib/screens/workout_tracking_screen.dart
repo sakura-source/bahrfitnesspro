@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WorkoutTrackingScreen extends StatefulWidget {
+  const WorkoutTrackingScreen({super.key});
+
   @override
   _WorkoutTrackingScreenState createState() => _WorkoutTrackingScreenState();
 }
@@ -20,9 +22,9 @@ class _WorkoutTrackingScreenState extends State<WorkoutTrackingScreen> {
         'date': DateTime.now(),
         'exercises': List.from(exercises),
       });
-      exercises.forEach((exercise) {
+      for (var exercise in exercises) {
         exercise['reps'] = 0;
-      });
+      }
     });
   }
 
@@ -30,7 +32,7 @@ class _WorkoutTrackingScreenState extends State<WorkoutTrackingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Workout Tracking'),
+        title: const Text('Workout Tracking'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -47,7 +49,7 @@ class _WorkoutTrackingScreenState extends State<WorkoutTrackingScreen> {
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           IconButton(
-                            icon: Icon(Icons.remove),
+                            icon: const Icon(Icons.remove),
                             onPressed: () {
                               setState(() {
                                 if (exercises[index]['reps'] > 0) {
@@ -58,7 +60,7 @@ class _WorkoutTrackingScreenState extends State<WorkoutTrackingScreen> {
                           ),
                           Text('${exercises[index]['reps']}'),
                           IconButton(
-                            icon: Icon(Icons.add),
+                            icon: const Icon(Icons.add),
                             onPressed: () {
                               setState(() {
                                 exercises[index]['reps']++;
@@ -72,13 +74,13 @@ class _WorkoutTrackingScreenState extends State<WorkoutTrackingScreen> {
                 },
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: logWorkout,
-              child: Text('Log Workout'),
+              child: const Text('Log Workout'),
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'Workout History',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),

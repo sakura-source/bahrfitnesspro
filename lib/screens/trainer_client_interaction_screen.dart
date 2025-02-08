@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TrainerClientInteractionScreen extends StatefulWidget {
+  const TrainerClientInteractionScreen({super.key});
+
   @override
   _TrainerClientInteractionScreenState createState() => _TrainerClientInteractionScreenState();
 }
@@ -34,15 +36,15 @@ class _TrainerClientInteractionScreenState extends State<TrainerClientInteractio
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Trainer-Client Interaction'),
+        title: const Text('Trainer-Client Interaction'),
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Chat Section
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 'Chat',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
@@ -50,7 +52,7 @@ class _TrainerClientInteractionScreenState extends State<TrainerClientInteractio
             ),
             ListView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: chatMessages.length,
               itemBuilder: (context, index) {
                 return ListTile(
@@ -60,8 +62,8 @@ class _TrainerClientInteractionScreenState extends State<TrainerClientInteractio
               },
             ),
             // Session Booking Section
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 'Session Bookings',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
@@ -69,7 +71,7 @@ class _TrainerClientInteractionScreenState extends State<TrainerClientInteractio
             ),
             ListView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: sessionBookings.length,
               itemBuilder: (context, index) {
                 return ListTile(
@@ -79,8 +81,8 @@ class _TrainerClientInteractionScreenState extends State<TrainerClientInteractio
               },
             ),
             // Feedback Section
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 'Feedback',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
@@ -88,7 +90,7 @@ class _TrainerClientInteractionScreenState extends State<TrainerClientInteractio
             ),
             ListView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: feedback.length,
               itemBuilder: (context, index) {
                 return ListTile(
@@ -104,8 +106,8 @@ class _TrainerClientInteractionScreenState extends State<TrainerClientInteractio
               },
             ),
             // Shared Notes Section
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 'Shared Notes',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
@@ -113,7 +115,7 @@ class _TrainerClientInteractionScreenState extends State<TrainerClientInteractio
             ),
             ListView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: sharedNotes.length,
               itemBuilder: (context, index) {
                 return ListTile(

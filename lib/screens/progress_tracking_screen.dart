@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 
 class ProgressTrackingScreen extends StatefulWidget {
+  const ProgressTrackingScreen({super.key});
+
   @override
   _ProgressTrackingScreenState createState() => _ProgressTrackingScreenState();
 }
@@ -40,7 +42,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Progress Tracking'),
+        title: const Text('Progress Tracking'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -53,19 +55,19 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen> {
                 dateTimeFactory: const charts.LocalDateTimeFactory(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Implement data filtering and comparison features
               },
-              child: Text('Filter Data'),
+              child: const Text('Filter Data'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Implement AI-driven insights and recommendations
               },
-              child: Text('Get Insights'),
+              child: const Text('Get Insights'),
             ),
           ],
         ),

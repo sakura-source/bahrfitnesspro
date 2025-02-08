@@ -4,6 +4,8 @@ import 'package:bahrfitnesspro/models/user_model.dart';
 import 'package:bahrfitnesspro/providers/user_provider.dart';
 
 class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
+
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
 }
@@ -20,7 +22,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -33,19 +35,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   radius: 50,
                   backgroundImage: NetworkImage(user.photoUrl),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
                   initialValue: user.displayName,
-                  decoration: InputDecoration(labelText: 'Display Name'),
+                  decoration: const InputDecoration(labelText: 'Display Name'),
                   onSaved: (value) => _displayName = value,
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
                   initialValue: user.photoUrl,
-                  decoration: InputDecoration(labelText: 'Photo URL'),
+                  decoration: const InputDecoration(labelText: 'Photo URL'),
                   onSaved: (value) => _photoUrl = value,
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () async {
                     if (_formKey.currentState.validate()) {
@@ -59,10 +61,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       await userProvider.updateUser(updatedUser);
                     }
                   },
-                  child: Text('Update Profile'),
+                  child: const Text('Update Profile'),
                 ),
               ] else ...[
-                CircularProgressIndicator(),
+                const CircularProgressIndicator(),
               ],
             ],
           ),

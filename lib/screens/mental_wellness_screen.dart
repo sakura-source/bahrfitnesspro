@@ -1,55 +1,57 @@
 import 'package:flutter/material.dart';
 
 class MentalWellnessScreen extends StatelessWidget {
+  const MentalWellnessScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mental Wellness'),
+        title: const Text('Mental Wellness'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
+            const Text(
               'Stress and Mood Tracking',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Track your stress levels and mood over time.',
               style: TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => StressMoodTrackingScreen()),
+                  MaterialPageRoute(builder: (context) => const StressMoodTrackingScreen()),
                 );
               },
-              child: Text('Track Now'),
+              child: const Text('Track Now'),
             ),
-            SizedBox(height: 32),
-            Text(
+            const SizedBox(height: 32),
+            const Text(
               'Guided Meditation and Relaxation',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Listen to guided meditation and relaxation audio content.',
               style: TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => GuidedMeditationScreen()),
+                  MaterialPageRoute(builder: (context) => const GuidedMeditationScreen()),
                 );
               },
-              child: Text('Listen Now'),
+              child: const Text('Listen Now'),
             ),
           ],
         ),
@@ -59,13 +61,15 @@ class MentalWellnessScreen extends StatelessWidget {
 }
 
 class StressMoodTrackingScreen extends StatelessWidget {
+  const StressMoodTrackingScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stress and Mood Tracking'),
+        title: const Text('Stress and Mood Tracking'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Stress and Mood Tracking Screen'),
       ),
     );
@@ -73,13 +77,15 @@ class StressMoodTrackingScreen extends StatelessWidget {
 }
 
 class GuidedMeditationScreen extends StatelessWidget {
+  const GuidedMeditationScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Guided Meditation and Relaxation'),
+        title: const Text('Guided Meditation and Relaxation'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Guided Meditation and Relaxation Screen'),
       ),
     );

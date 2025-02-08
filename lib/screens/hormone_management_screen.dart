@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HormoneManagementScreen extends StatefulWidget {
+  const HormoneManagementScreen({super.key});
+
   @override
   _HormoneManagementScreenState createState() => _HormoneManagementScreenState();
 }
@@ -40,7 +42,7 @@ class _HormoneManagementScreenState extends State<HormoneManagementScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hormone Management'),
+        title: const Text('Hormone Management'),
       ),
       body: ListView.builder(
         itemCount: hormoneData.length,
@@ -55,7 +57,7 @@ class _HormoneManagementScreenState extends State<HormoneManagementScreen> {
                   Text('Schedule: ${hormoneData[index]['schedule']}'),
                   Text('Benefits: ${hormoneData[index]['benefits']}'),
                   Text('Risks: ${hormoneData[index]['risks']}'),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text('Recommendations: ${recommendations[index]}'),
                   Text('Medical Warnings: ${medicalWarnings[index]}'),
                 ],

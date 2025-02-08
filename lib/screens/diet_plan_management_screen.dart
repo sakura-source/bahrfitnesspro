@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DietPlanManagementScreen extends StatefulWidget {
+  const DietPlanManagementScreen({super.key});
+
   @override
   _DietPlanManagementScreenState createState() => _DietPlanManagementScreenState();
 }
@@ -62,18 +64,18 @@ class _DietPlanManagementScreenState extends State<DietPlanManagementScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Diet Plan Management'),
+        title: const Text('Diet Plan Management'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
+            const Text(
               'AI-Suggested Meal Plans',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
                 itemCount: mealPlans.length,
@@ -96,12 +98,12 @@ class _DietPlanManagementScreenState extends State<DietPlanManagementScreen> {
                 },
               ),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Nutrition Tracking',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text('Total Calories: ${nutritionTracking['calories']}'),
             Text('Total Carbs: ${nutritionTracking['macronutrients']['carbs']}g'),
             Text('Total Protein: ${nutritionTracking['macronutrients']['protein']}g'),

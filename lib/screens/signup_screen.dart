@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
+
   @override
   _SignupScreenState createState() => _SignupScreenState();
 }
@@ -15,10 +17,10 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Signup'),
+        title: const Text('Signup'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -27,21 +29,21 @@ class _SignupScreenState extends State<SignupScreen> {
               onChanged: (value) {
                 email = value;
               },
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Enter your email',
               ),
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             TextField(
               obscureText: true,
               onChanged: (value) {
                 password = value;
               },
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Enter your password',
               ),
             ),
-            SizedBox(height: 24.0),
+            const SizedBox(height: 24.0),
             ElevatedButton(
               onPressed: () async {
                 try {
@@ -54,7 +56,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   print(e);
                 }
               },
-              child: Text('Signup'),
+              child: const Text('Signup'),
             ),
           ],
         ),

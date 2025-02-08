@@ -5,7 +5,7 @@ class ChartWidget extends StatelessWidget {
   final List<charts.Series> seriesList;
   final bool animate;
 
-  ChartWidget({@required this.seriesList, this.animate});
+  const ChartWidget({super.key, @required this.seriesList, this.animate});
 
   @override
   Widget build(BuildContext context) {

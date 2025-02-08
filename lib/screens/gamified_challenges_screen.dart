@@ -1,39 +1,41 @@
 import 'package:flutter/material.dart';
 
 class GamifiedChallengesScreen extends StatelessWidget {
+  const GamifiedChallengesScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gamified Challenges'),
+        title: const Text('Gamified Challenges'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'Welcome to Gamified Challenges!',
               style: TextStyle(fontSize: 24),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LeaderboardScreen()),
+                  MaterialPageRoute(builder: (context) => const LeaderboardScreen()),
                 );
               },
-              child: Text('View Leaderboard'),
+              child: const Text('View Leaderboard'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => CreateChallengeScreen()),
+                  MaterialPageRoute(builder: (context) => const CreateChallengeScreen()),
                 );
               },
-              child: Text('Create Challenge'),
+              child: const Text('Create Challenge'),
             ),
           ],
         ),
@@ -43,13 +45,15 @@ class GamifiedChallengesScreen extends StatelessWidget {
 }
 
 class LeaderboardScreen extends StatelessWidget {
+  const LeaderboardScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Leaderboard'),
+        title: const Text('Leaderboard'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Leaderboard Screen'),
       ),
     );
@@ -57,13 +61,15 @@ class LeaderboardScreen extends StatelessWidget {
 }
 
 class CreateChallengeScreen extends StatelessWidget {
+  const CreateChallengeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create Challenge'),
+        title: const Text('Create Challenge'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Create Challenge Screen'),
       ),
     );
