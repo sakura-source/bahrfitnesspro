@@ -14,10 +14,8 @@ jobs:
 
     steps:
     # 1. Setup Flutter
-    - name: Setup Flutter
-      uses: subosito/flutter-action@v2
-      with:
-        flutter-version: "stable"
+    - name: Flutter action
+      uses: subosito/flutter-action@v2.18.0
 
     # 2. Checkout code
     - name: Checkout Code
@@ -46,3 +44,16 @@ jobs:
     # 8. Run tests
     - name: Run Tests
       run: flutter test
+
+    - name: Setup Java JDK
+      uses: actions/setup-java@v4.7.0
+      
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v4.1.8
+
+    - name: Setup Go environment
+      uses: actions/setup-go@v5.3.0
+
+      
+
+ 
