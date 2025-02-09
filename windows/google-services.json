@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "792621454981",
+    "project_id": "werdanyfitnesspro",
+    "storage_bucket": "werdanyfitnesspro.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792621454981:android:a9c597328b83bce4f8fbec",
+        "android_client_info": {
+          "package_name": "com.example.werdanyfitnesspro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "792621454981-gigdq3sslp371pmnpuui7e7urb425o52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbaFdQ7unwhaeJveK02Z29Fy4t-ExIwXs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792621454981-gigdq3sslp371pmnpuui7e7urb425o52.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "792621454981-ia4hqtrokjobitfokcnj94k6j9g1af42.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.werdanyfitnesspro"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
