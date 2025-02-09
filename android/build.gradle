@@ -24,6 +24,31 @@ subprojects {
     project.evaluationDependsOn(':app')
 }
 
+android {
+    namespace 'com.example.myapp'
+    namespace 'com.example.myapp'
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.example.myapp"
+        minSdkVersion 16
+        //noinspection EditedTargetSdkVersion
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+dependencies {
+    implementation 'com.android.support:support-annotations:28.0.0'
+    implementation 'com.android.support:support-v13:28.0.0'
 }
