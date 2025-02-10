@@ -19,7 +19,8 @@ class UserProvider with ChangeNotifier {
     try {
       User firebaseUser = _authService.currentUser;
       if (firebaseUser != null) {
-        DocumentSnapshot doc = await _firestoreService.getUser(firebaseUser.uid);
+        DocumentSnapshot doc =
+          await _firestoreService.getUser(firebaseUser.uid);
         _user = User.fromMap(doc.data());
         notifyListeners();
       }

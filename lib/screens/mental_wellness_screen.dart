@@ -24,7 +24,6 @@ class MentalWellnessScreen extends StatelessWidget {
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Navigate to stress and mood tracking screen
               },
               child: Text('Track Now'),
             ),
@@ -41,7 +40,6 @@ class MentalWellnessScreen extends StatelessWidget {
             SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                // Navigate to guided meditation and relaxation screen
               },
               child: Text('Listen Now'),
             ),

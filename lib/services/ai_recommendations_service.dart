@@ -29,6 +29,8 @@ class AIRecommendationsService {
   List<String> _interpretPredictions(List<double> predictions) {
     // Interpret the predictions and return personalized recommendations
     // This is a placeholder implementation
-    return predictions.map((prediction) => 'Recommendation: $prediction').toList();
+    return predictions
+        .map((prediction) => 'Recommendation: $prediction')
+        .toList();
   }
 }

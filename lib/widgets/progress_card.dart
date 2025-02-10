@@ -6,7 +6,6 @@ class ProgressCard extends StatelessWidget {
   final String unit;
   final Color color;
 
-  ProgressCard({
     @required this.title,
     @required this.value,
     @required this.unit,

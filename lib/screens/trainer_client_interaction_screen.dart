@@ -4,10 +4,12 @@ class TrainerClientInteractionScreen extends StatefulWidget {
   const TrainerClientInteractionScreen({super.key});
 
   @override
-  _TrainerClientInteractionScreenState createState() => _TrainerClientInteractionScreenState();
+  _TrainerClientInteractionScreenState createState() =>
+      _TrainerClientInteractionScreenState();
 }
 
-class _TrainerClientInteractionScreenState extends State<TrainerClientInteractionScreen> {
+class _TrainerClientInteractionScreenState
+    extends State<TrainerClientInteractionScreen> {
   // Placeholder for chat messages
   List<Map<String, String>> chatMessages = [
     {'sender': 'Trainer', 'message': 'Hello! How was your workout today?'},
@@ -23,7 +25,11 @@ class _TrainerClientInteractionScreenState extends State<TrainerClientInteractio
   // Placeholder for feedback
   List<Map<String, String>> feedback = [
     {'session': '2023-09-01', 'rating': '5', 'comments': 'Great session!'},
-    {'session': '2023-09-03', 'rating': '4', 'comments': 'Good, but could be better.'},
+    {
+      'session': '2023-09-03',
+      'rating': '4',
+      'comments': 'Good, but could be better.'
+    },
   ];
 
   // Placeholder for shared notes
@@ -75,7 +81,8 @@ class _TrainerClientInteractionScreenState extends State<TrainerClientInteractio
               itemCount: sessionBookings.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Text('${sessionBookings[index]['date']} at ${sessionBookings[index]['time']}'),
+                  title: Text(
+                      '${sessionBookings[index]['date']} at ${sessionBookings[index]['time']}'),
                   subtitle: Text('Status: ${sessionBookings[index]['status']}'),
                 );
               },

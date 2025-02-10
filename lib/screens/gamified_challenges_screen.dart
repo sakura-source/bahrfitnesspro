@@ -18,14 +18,18 @@ class GamifiedChallengesScreen extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Navigate to leaderboard screen
+                Navigator.push(
+                  context,
+                );
               },
               child: Text('View Leaderboard'),
             ),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Navigate to create challenge screen
+                Navigator.push(
+                  context,
+                );
               },
               child: Text('Create Challenge'),
             ),

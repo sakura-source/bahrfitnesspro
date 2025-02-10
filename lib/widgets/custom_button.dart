@@ -5,7 +5,6 @@ class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
   final bool isPrimary;
 
-  CustomButton({
     @required this.text,
     @required this.onPressed,
     this.isPrimary = true,

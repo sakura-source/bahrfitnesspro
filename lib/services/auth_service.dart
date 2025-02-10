@@ -24,7 +24,8 @@ class AuthService {
   /// Returns a [User] object if the sign-in is successful, otherwise returns null.
   Future signInWithEmailAndPassword(String email, String password) async {
     try {
-      UserCredential result = await _auth.signInWithEmailAndPassword(email: email, password: password);
+      UserCredential result = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
       User user = result.user;
       return _userFromFirebaseUser(user);
     } catch (e) {
@@ -39,7 +40,8 @@ class AuthService {
   /// Returns a [User] object if the registration is successful, otherwise returns null.
   Future registerWithEmailAndPassword(String email, String password) async {
     try {
-      UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      UserCredential result = await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
       User user = result.user;
       return _userFromFirebaseUser(user);
     } catch (e) {

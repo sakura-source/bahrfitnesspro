@@ -5,10 +5,12 @@ class WearablesIntegrationScreen extends StatefulWidget {
   const WearablesIntegrationScreen({super.key});
 
   @override
-  _WearablesIntegrationScreenState createState() => _WearablesIntegrationScreenState();
+  _WearablesIntegrationScreenState createState() =>
+      _WearablesIntegrationScreenState();
 }
 
-class _WearablesIntegrationScreenState extends State<WearablesIntegrationScreen> {
+class _WearablesIntegrationScreenState
+    extends State<WearablesIntegrationScreen> {
   Map<String, dynamic> wearableData = {
     'heartRate': 0,
     'caloriesBurned': 0,

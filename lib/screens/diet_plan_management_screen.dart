@@ -4,7 +4,8 @@ class DietPlanManagementScreen extends StatefulWidget {
   const DietPlanManagementScreen({super.key});
 
   @override
-  _DietPlanManagementScreenState createState() => _DietPlanManagementScreenState();
+  _DietPlanManagementScreenState createState() =>
+      _DietPlanManagementScreenState();
 }
 
 class _DietPlanManagementScreenState extends State<DietPlanManagementScreen> {
@@ -86,11 +87,15 @@ class _DietPlanManagementScreenState extends State<DietPlanManagementScreen> {
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Items: ${mealPlans[index]['items'].join(', ')}'),
+                          Text(
+                              'Items: ${mealPlans[index]['items'].join(', ')}'),
                           Text('Calories: ${mealPlans[index]['calories']}'),
-                          Text('Carbs: ${mealPlans[index]['macronutrients']['carbs']}g'),
-                          Text('Protein: ${mealPlans[index]['macronutrients']['protein']}g'),
-                          Text('Fat: ${mealPlans[index]['macronutrients']['fat']}g'),
+                          Text(
+                              'Carbs: ${mealPlans[index]['macronutrients']['carbs']}g'),
+                          Text(
+                              'Protein: ${mealPlans[index]['macronutrients']['protein']}g'),
+                          Text(
+                              'Fat: ${mealPlans[index]['macronutrients']['fat']}g'),
                         ],
                       ),
                     ),
@@ -105,8 +110,10 @@ class _DietPlanManagementScreenState extends State<DietPlanManagementScreen> {
             ),
             const SizedBox(height: 16),
             Text('Total Calories: ${nutritionTracking['calories']}'),
-            Text('Total Carbs: ${nutritionTracking['macronutrients']['carbs']}g'),
-            Text('Total Protein: ${nutritionTracking['macronutrients']['protein']}g'),
+            Text(
+                'Total Carbs: ${nutritionTracking['macronutrients']['carbs']}g'),
+            Text(
+                'Total Protein: ${nutritionTracking['macronutrients']['protein']}g'),
             Text('Total Fat: ${nutritionTracking['macronutrients']['fat']}g'),
           ],
         ),
