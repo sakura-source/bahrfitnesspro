@@ -167,3 +167,84 @@ For support or inquiries:
 	•	Twitter: @AmirElokdsha
 
 🌟 Ready to take your fitness journey to the next level? Join BahrFitnessPRO today! 🚀
+
+## New Features and Screens
+
+### Authentication
+- **Login Screen**: Email/password login form with Firebase Auth.
+- **Signup Screen**: Registration form with email and password fields.
+- **Forgot Password Screen**: Reset password functionality.
+
+### Dashboard
+- **Home Screen**: Display progress cards (calories, steps, workouts) and a carousel for motivational tips.
+
+### Tracking
+- **Workout Tracking Screen**: Log completed workouts.
+- **Diet Tracking Screen**: Track meals and calorie intake.
+
+### User Profile
+- **Profile Screen**: Edit user details (name, email, weight, height) and upload profile pictures.
+
+### Advanced Features
+- **Hormone Management Screen**: Manage doses, schedules, and track benefits/risks.
+- **Mental Wellness Screen**: Tools for stress and mood tracking, guided meditation, and relaxation content.
+- **Gamified Challenges Screen**: Create challenges and display leaderboards.
+
+### Settings
+- **Settings Screen**: Toggle language (English/Arabic) and theme (dark/light).
+
+### Reusable Widgets
+- **Custom Button**: A customizable button with animations.
+- **Progress Card**: For displaying stats like calories burned.
+- **Diet Card**: For showing meals.
+- **Line Chart**: For progress tracking (e.g., weight).
+- **Bar Chart**: For weekly calories.
+- **Loading Indicator**: A sleek loading spinner.
+- **Error Widget**: For displaying errors gracefully.
+
+### Firebase Integration
+- **Authentication**: Email/password login and signup, password recovery via email.
+- **Firestore**: Store user data (e.g., weight, progress, goals), workout and meal logs.
+- **Cloud Storage**: Save progress photos and profile pictures.
+- **App Check**: Enable App Check for security.
+
+### Navigation
+- **State Management**: Use `flutter_riverpod` or `provider` for state management.
+- **Bottom Navigation Bar**: Switch between Dashboard, Profile, and Settings.
+
+### Animations
+- **Screen Transitions**: Use `flutter_animations` for transitions between screens.
+- **Hover Effects**: Add hover effects for buttons and cards (on supported platforms).
+
+### Testing
+- **Unit Tests**: Write unit tests for `auth_service.dart` and `firestore_service.dart`.
+- **UI Tests**: Write UI tests for `login_screen.dart` and `home_screen.dart`.
+
+### CI/CD Pipeline
+- **GitHub Actions**: Automate workflows to run `flutter test`, build APK and IPA files, and deploy the web version to Firebase Hosting.
+
+### Deployment
+- **Build APK for Android**:
+  ```bash
+  flutter build apk
+  ```
+
+- **Build IPA for iOS**:
+  ```bash
+  flutter build ios
+  ```
+
+- **Deploy the web version**:
+  ```bash
+  flutter build web
+  firebase deploy --only hosting
+  ```
+
+### Deliverables
+- A fully functional BahrFitnessPRO app with:
+  - Authentication.
+  - Tracking (workouts, diet, hormones).
+  - Gamified challenges.
+  - Progress tracking and analytics.
+  - Ready-to-deploy builds for Android, iOS, and Web.
+  - Comprehensive documentation in README.md.
