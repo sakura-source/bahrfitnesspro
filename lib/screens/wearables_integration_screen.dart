@@ -9,7 +9,6 @@ class WearablesIntegrationScreen extends StatefulWidget {
 }
 
 class _WearablesIntegrationScreenState extends State<WearablesIntegrationScreen> {
-  // Placeholder for wearable data
   Map<String, dynamic> wearableData = {
     'heartRate': 0,
     'caloriesBurned': 0,
@@ -26,6 +25,23 @@ class _WearablesIntegrationScreenState extends State<WearablesIntegrationScreen>
   @override
   void initState() {
     super.initState();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    syncWearableData();
+  }
+
+  Future<void> syncWearableData() async {
+    try {
+      var data = await WearableIntegration.getWearableData();
+      setState(() {
+        wearableData = data;
+      });
+    } catch (e) {
+      print('Error syncing wearable data: $e');
+    }
   }
 
   @override

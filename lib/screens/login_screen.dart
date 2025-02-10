@@ -49,6 +49,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 }
               },
             ),
+            SizedBox(height: 8.0),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/signup');
+              },
+              child: Text('Don\'t have an account? Sign up'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/forgot_password');
+              },
+              child: Text('Forgot Password?'),
+            ),
           ],
         ),
       ),

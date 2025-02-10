@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
+  final bool isPrimary;
 
+  CustomButton({
     @required this.text,
     @required this.onPressed,
+    this.isPrimary = true,
   });
 
   @override
@@ -23,6 +26,7 @@ class CustomButton extends StatelessWidget {
         ),
       ),
       onPressed: onPressed,
+      child: Text(text),
     );
   }
 }
