@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wearable_integration/wearable_integration.dart';
 
 class WearablesIntegrationScreen extends StatefulWidget {
   const WearablesIntegrationScreen({super.key});
@@ -25,21 +26,18 @@ class _WearablesIntegrationScreenState extends State<WearablesIntegrationScreen>
   @override
   void initState() {
     super.initState();
-    syncWearableData(); // Sync data when the screen is initialized
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Wearables Integration'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Heart Rate: ${wearableData['heartRate']} bpm'),
-            const SizedBox(height: 20),
             Text('Calories Burned: ${wearableData['caloriesBurned']} kcal'),
           ],
         ),

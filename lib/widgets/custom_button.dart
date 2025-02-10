@@ -3,33 +3,26 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  final Color color;
-  final double borderRadius;
-  final double padding;
 
-  const CustomButton({super.key, 
     @required this.text,
     @required this.onPressed,
-    this.color = Colors.blue,
-    this.borderRadius = 8.0,
-    this.padding = 16.0,
   });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: color,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+          isPrimary ? Colors.blue : Colors.orange,
         ),
-        padding: EdgeInsets.all(padding),
+        padding: MaterialStateProperty.all(
+          EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+        ),
+        textStyle: MaterialStateProperty.all(
+          TextStyle(fontSize: 16.0),
+        ),
       ),
-      child: Text(
-        text,
-        style: const TextStyle(color: Colors.white),
-      ),
+      onPressed: onPressed,
     );
   }
 }

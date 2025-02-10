@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
-
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -17,10 +15,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -29,21 +25,17 @@ class _LoginScreenState extends State<LoginScreen> {
               onChanged: (value) {
                 email = value;
               },
-              decoration: const InputDecoration(
                 hintText: 'Enter your email',
               ),
             ),
-            const SizedBox(height: 8.0),
             TextField(
               obscureText: true,
               onChanged: (value) {
                 password = value;
               },
-              decoration: const InputDecoration(
                 hintText: 'Enter your password',
               ),
             ),
-            const SizedBox(height: 24.0),
             ElevatedButton(
               onPressed: () async {
                 try {
@@ -56,7 +48,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   print(e);
                 }
               },
-              child: const Text('Login'),
             ),
           ],
         ),

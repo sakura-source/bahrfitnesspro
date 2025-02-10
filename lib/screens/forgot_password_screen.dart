@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class SignupScreen extends StatefulWidget {
-  const SignupScreen({super.key});
-
+class ForgotPasswordScreen extends StatefulWidget {
   @override
-  _SignupScreenState createState() => _SignupScreenState();
+  _ForgotPasswordScreenState createState() => _ForgotPasswordScreenState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
+class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   final _auth = FirebaseAuth.instance;
   String email;
-  String password;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text('Forgot Password'),
       ),
       body: Padding(
+        padding: EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -27,29 +26,30 @@ class _SignupScreenState extends State<SignupScreen> {
               onChanged: (value) {
                 email = value;
               },
+              decoration: InputDecoration(
                 hintText: 'Enter your email',
               ),
             ),
-            TextField(
-              obscureText: true,
-              onChanged: (value) {
-                password = value;
-              },
-                hintText: 'Enter your password',
-              ),
-            ),
+            SizedBox(height: 24.0),
             ElevatedButton(
               onPressed: () async {
                 try {
-                  final newUser = await _auth.createUserWithEmailAndPassword(
-                      email: email, password: password);
-                  if (newUser != null) {
-                    Navigator.pushNamed(context, '/home');
-                  }
+                  await _auth.sendPasswordResetEmail(email: email);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Password reset email sent!'),
+                    ),
+                  );
                 } catch (e) {
                   print(e);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Error: ${e.toString()}'),
+                    ),
+                  );
                 }
               },
+              child: Text('Reset Password'),
             ),
           ],
         ),

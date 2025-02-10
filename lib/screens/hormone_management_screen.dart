@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class HormoneManagementScreen extends StatefulWidget {
-  const HormoneManagementScreen({super.key});
-
   @override
   _HormoneManagementScreenState createState() => _HormoneManagementScreenState();
 }
@@ -26,23 +24,10 @@ class _HormoneManagementScreenState extends State<HormoneManagementScreen> {
     },
   ];
 
-  // Placeholder for AI-driven recommendations
-  List<String> recommendations = [
-    'Consider increasing your Testosterone dose to 75mg for better results.',
-    'Monitor your Estrogen levels closely to avoid potential risks.'
-  ];
-
-  // Placeholder for medical warnings and alerts
-  List<String> medicalWarnings = [
-    'High risk of liver damage with current Testosterone dose.',
-    'Increased risk of blood clots with current Estrogen dose.'
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Hormone Management'),
       ),
       body: ListView.builder(
         itemCount: hormoneData.length,
@@ -57,9 +42,6 @@ class _HormoneManagementScreenState extends State<HormoneManagementScreen> {
                   Text('Schedule: ${hormoneData[index]['schedule']}'),
                   Text('Benefits: ${hormoneData[index]['benefits']}'),
                   Text('Risks: ${hormoneData[index]['risks']}'),
-                  const SizedBox(height: 10),
-                  Text('Recommendations: ${recommendations[index]}'),
-                  Text('Medical Warnings: ${medicalWarnings[index]}'),
                 ],
               ),
             ),
