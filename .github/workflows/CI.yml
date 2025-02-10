@@ -13,35 +13,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Setup Flutter
     - name: Flutter action
       uses: subosito/flutter-action@v2.18.0
 
-    # 2. Checkout code
     - name: Checkout Code
       uses: actions/checkout@v3
 
-    # 3. Verify Flutter Installation
     - name: Verify Flutter Installation
       run: flutter doctor
 
-    # 4. Create Missing Flutter Files (Optional)
     - name: Create Missing Flutter Files
       run: flutter create .
 
-    # 5. Install Dependencies
     - name: Install Dependencies
       run: flutter pub get
 
-    # 6. Upgrade Flutter and Dependencies
     - name: Upgrade Flutter
       run: flutter upgrade
 
-    # 7. Run lint checks
     - name: Analyze Code
       run: flutter analyze
 
-    # 8. Run tests
     - name: Run Tests
       run: flutter test
 
@@ -53,7 +45,3 @@ jobs:
 
     - name: Setup Go environment
       uses: actions/setup-go@v5.3.0
-
-      
-
- 
