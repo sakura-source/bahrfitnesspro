@@ -6,6 +6,7 @@ import 'package:bahrfitnesspro/services/firestore_service.dart';
 class MockFirestore extends Mock implements FirebaseFirestore {}
 class MockDocumentReference extends Mock implements DocumentReference {}
 class MockDocumentSnapshot extends Mock implements DocumentSnapshot {}
+class MockCollectionReference extends Mock implements CollectionReference {}
 
 void main() {
   group('FirestoreService', () {
