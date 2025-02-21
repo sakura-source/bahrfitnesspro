@@ -4,7 +4,7 @@ class User {
   final String displayName;
   final String photoUrl;
 
-  User({this.uid, this.email, this.displayName, this.photoUrl});
+  User({required this.uid, required this.email, this.displayName, this.photoUrl});
 
   factory User.fromMap(Map<String, dynamic> data) {
     return User(
