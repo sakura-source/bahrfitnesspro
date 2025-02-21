@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HormoneManagementScreen extends StatefulWidget {
+  const HormoneManagementScreen({super.key});
+
   @override
   _HormoneManagementScreenState createState() =>
       _HormoneManagementScreenState();

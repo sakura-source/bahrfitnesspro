@@ -5,7 +5,7 @@ class DietCard extends StatelessWidget {
   final int calories;
   final String time;
 
-  DietCard({
+  const DietCard({super.key, 
     @required this.mealName,
     @required this.calories,
     @required this.time,

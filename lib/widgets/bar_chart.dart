@@ -6,7 +6,7 @@ class BarChartWidget extends StatelessWidget {
   final String title;
   final Color barColor;
 
-  BarChartWidget({
+  const BarChartWidget({super.key, 
     @required this.barGroups,
     @required this.title,
     @required this.barColor,

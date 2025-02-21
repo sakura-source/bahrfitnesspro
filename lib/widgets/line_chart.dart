@@ -6,7 +6,7 @@ class LineChartWidget extends StatelessWidget {
   final String title;
   final Color lineColor;
 
-  LineChartWidget({
+  const LineChartWidget({super.key, 
     @required this.dataPoints,
     @required this.title,
     @required this.lineColor,

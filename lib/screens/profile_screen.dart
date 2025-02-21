@@ -103,7 +103,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               onChanged: (value) {
                 _weight = double.parse(value);
               },
-              controller: TextEditingController(text: _weight?.toString()),
+              controller: TextEditingController(text: _weight.toString()),
             ),
             TextField(
               decoration: InputDecoration(labelText: 'Height (cm)'),
@@ -111,7 +111,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               onChanged: (value) {
                 _height = double.parse(value);
               },
-              controller: TextEditingController(text: _height?.toString()),
+              controller: TextEditingController(text: _height.toString()),
             ),
             SizedBox(height: 20),
             ElevatedButton(

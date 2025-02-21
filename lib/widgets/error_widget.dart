@@ -4,7 +4,7 @@ class ErrorWidget extends StatelessWidget {
   final String errorMessage;
   final bool isCritical;
 
-  ErrorWidget({@required this.errorMessage, this.isCritical = false});
+  const ErrorWidget({super.key, @required this.errorMessage, this.isCritical = false});
 
   @override
   Widget build(BuildContext context) {

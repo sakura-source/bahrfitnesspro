@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MentalWellnessScreen extends StatelessWidget {
+  const MentalWellnessScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

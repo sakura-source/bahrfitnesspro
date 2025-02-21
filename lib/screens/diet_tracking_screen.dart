@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DietTrackingScreen extends StatefulWidget {
+  const DietTrackingScreen({super.key});
+
   @override
   _DietTrackingScreenState createState() => _DietTrackingScreenState();
 }

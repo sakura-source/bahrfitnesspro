@@ -18,13 +18,11 @@ class UserProvider with ChangeNotifier {
   Future<void> fetchUser() async {
     try {
       User firebaseUser = _authService.currentUser;
-      if (firebaseUser != null) {
-        DocumentSnapshot doc =
-          await _firestoreService.getUser(firebaseUser.uid);
-        _user = User.fromMap(doc.data());
-        notifyListeners();
-      }
-    } catch (e) {
+      DocumentSnapshot doc =
+        await _firestoreService.getUser(firebaseUser.uid);
+      _user = User.fromMap(doc.data());
+      notifyListeners();
+        } catch (e) {
       print('Error fetching user: $e');
     }
   }

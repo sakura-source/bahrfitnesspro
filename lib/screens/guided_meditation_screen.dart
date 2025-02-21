@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:bahrfitnesspro/services/meditation_service.dart';
 
 class GuidedMeditationScreen extends StatefulWidget {
+  const GuidedMeditationScreen({super.key});
+
   @override
   _GuidedMeditationScreenState createState() => _GuidedMeditationScreenState();
 }
 
 class _GuidedMeditationScreenState extends State<GuidedMeditationScreen> {
-  MeditationService _meditationService = MeditationService();
+  final MeditationService _meditationService = MeditationService();
   List<String> _meditationTracks = [];
   bool _isLoading = true;
 
