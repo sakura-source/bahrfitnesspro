@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:bahrfitnesspro/services/ai_recommendations_service.dart';
 
 class DietPlanManagementScreen extends StatefulWidget {
   const DietPlanManagementScreen({super.key});
@@ -9,56 +10,46 @@ class DietPlanManagementScreen extends StatefulWidget {
 }
 
 class _DietPlanManagementScreenState extends State<DietPlanManagementScreen> {
-  // Sample data for AI-suggested meal plans
-  List<Map<String, dynamic>> mealPlans = [
-    {
-      'meal': 'Breakfast',
-      'items': ['Oatmeal', 'Banana', 'Almonds'],
-      'calories': 350,
-      'macronutrients': {'carbs': 50, 'protein': 10, 'fat': 15}
-    },
-    {
-      'meal': 'Lunch',
-      'items': ['Grilled Chicken', 'Quinoa', 'Broccoli'],
-      'calories': 450,
-      'macronutrients': {'carbs': 40, 'protein': 30, 'fat': 20}
-    },
-    {
-      'meal': 'Dinner',
-      'items': ['Salmon', 'Sweet Potato', 'Asparagus'],
-      'calories': 500,
-      'macronutrients': {'carbs': 45, 'protein': 35, 'fat': 25}
-    },
-  ];
-
-  // Placeholder for tracking calorie intake and macronutrient breakdown
-  Map<String, dynamic> nutritionTracking = {
-    'calories': 0,
-    'macronutrients': {'carbs': 0, 'protein': 0, 'fat': 0}
-  };
-
-  // Function to update nutrition tracking
-  void updateNutritionTracking() {
-    int totalCalories = 0;
-    Map<String, int> totalMacronutrients = {'carbs': 0, 'protein': 0, 'fat': 0};
-
-    for (var meal in mealPlans) {
-      totalCalories += meal['calories'];
-      totalMacronutrients['carbs'] += meal['macronutrients']['carbs'];
-      totalMacronutrients['protein'] += meal['macronutrients']['protein'];
-      totalMacronutrients['fat'] += meal['macronutrients']['fat'];
-    }
-
-    setState(() {
-      nutritionTracking['calories'] = totalCalories;
-      nutritionTracking['macronutrients'] = totalMacronutrients;
-    });
-  }
+  AIRecommendationsService _aiRecommendationsService;
+  List<Map<String, dynamic>> mealPlans = [];
 
   @override
   void initState() {
     super.initState();
-    updateNutritionTracking();
+    _aiRecommendationsService = AIRecommendationsService();
+    _fetchAIRecommendations();
+  }
+
+  Future<void> _fetchAIRecommendations() async {
+    List<String> recommendations = await _aiRecommendationsService.getRecommendations([/* user data */]);
+    setState(() {
+      mealPlans = _parseRecommendations(recommendations);
+    });
+  }
+
+  List<Map<String, dynamic>> _parseRecommendations(List<String> recommendations) {
+    // Parse the AI recommendations into meal plans
+    // This is a placeholder implementation
+    return [
+      {
+        'meal': 'Breakfast',
+        'items': ['Oatmeal', 'Banana', 'Almonds'],
+        'calories': 350,
+        'macronutrients': {'carbs': 50, 'protein': 10, 'fat': 15}
+      },
+      {
+        'meal': 'Lunch',
+        'items': ['Grilled Chicken', 'Quinoa', 'Broccoli'],
+        'calories': 450,
+        'macronutrients': {'carbs': 40, 'protein': 30, 'fat': 20}
+      },
+      {
+        'meal': 'Dinner',
+        'items': ['Salmon', 'Sweet Potato', 'Asparagus'],
+        'calories': 500,
+        'macronutrients': {'carbs': 45, 'protein': 35, 'fat': 25}
+      },
+    ];
   }
 
   @override

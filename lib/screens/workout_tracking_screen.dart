@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:bahrfitnesspro/services/ai_recommendations_service.dart';
 
 class WorkoutTrackingScreen extends StatefulWidget {
   const WorkoutTrackingScreen({super.key});
@@ -13,6 +14,22 @@ class _WorkoutTrackingScreenState extends State<WorkoutTrackingScreen> {
   String _workoutName;
   int _duration;
   int _caloriesBurned;
+  AIRecommendationsService _aiRecommendationsService;
+  List<String> _aiWorkoutRecommendations = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _aiRecommendationsService = AIRecommendationsService();
+    _fetchAIWorkoutRecommendations();
+  }
+
+  Future<void> _fetchAIWorkoutRecommendations() async {
+    List<String> recommendations = await _aiRecommendationsService.getRecommendations([/* user data */]);
+    setState(() {
+      _aiWorkoutRecommendations = recommendations;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +85,21 @@ class _WorkoutTrackingScreenState extends State<WorkoutTrackingScreen> {
               ElevatedButton(
                 onPressed: _submitForm,
                 child: Text('Log Workout'),
+              ),
+              SizedBox(height: 20),
+              Text(
+                'AI-Generated Workout Recommendations',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: _aiWorkoutRecommendations.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Text(_aiWorkoutRecommendations[index]),
+                    );
+                  },
+                ),
               ),
             ],
           ),

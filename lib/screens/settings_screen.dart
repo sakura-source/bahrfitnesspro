@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/intl.dart';
 import 'package:bahrfitnesspro/providers/user_provider.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -52,6 +53,24 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 });
                 // Implement theme toggle functionality here
               },
+            ),
+            SizedBox(height: 32),
+            Text(
+              'Date Format',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              DateFormat('dd/MM/yyyy').format(DateTime.now()),
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(height: 32),
+            Text(
+              'Time Format',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              DateFormat('HH:mm:ss').format(DateTime.now()),
+              style: TextStyle(fontSize: 18),
             ),
           ],
         ),

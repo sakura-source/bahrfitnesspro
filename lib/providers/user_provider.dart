@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:bahrfitnesspro/models/user_model.dart';
 import 'package:bahrfitnesspro/services/auth_service.dart';
 import 'package:bahrfitnesspro/services/firestore_service.dart';
+import 'package:bahrfitnesspro/services/ai_recommendations_service.dart';
 
 /// UserProvider class handles user-related operations such as fetching user data,
 /// updating user data, signing out, and logging workouts/meals.
@@ -11,6 +12,7 @@ class UserProvider with ChangeNotifier {
   User _user;
   final AuthService _authService = AuthService();
   final FirestoreService _firestoreService = FirestoreService();
+  final AIRecommendationsService _aiRecommendationsService = AIRecommendationsService();
 
   User get user => _user;
 
@@ -64,6 +66,16 @@ class UserProvider with ChangeNotifier {
       await _firestoreService.saveMealLog(mealData);
     } catch (e) {
       print('Error saving meal log: $e');
+    }
+  }
+
+  /// Fetches AI recommendations for the user using AIRecommendationsService.
+  Future<List<String>> fetchAIRecommendations(List<double> userData) async {
+    try {
+      return await _aiRecommendationsService.getRecommendations(userData);
+    } catch (e) {
+      print('Error fetching AI recommendations: $e');
+      return [];
     }
   }
 }

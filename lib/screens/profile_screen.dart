@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+import 'package:intl/intl.dart';
 
 /// ProfileScreen is a StatefulWidget that allows users to view and edit their profile information,
 /// including their name, email, weight, height, and profile picture.
@@ -117,6 +118,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ElevatedButton(
               onPressed: _updateUserDetails,
               child: Text('Save Changes'),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Date Format: ${DateFormat('dd/MM/yyyy').format(DateTime.now())}',
+              style: TextStyle(fontSize: 18),
+            ),
+            Text(
+              'Time Format: ${DateFormat('HH:mm:ss').format(DateTime.now())}',
+              style: TextStyle(fontSize: 18),
             ),
           ],
         ),
