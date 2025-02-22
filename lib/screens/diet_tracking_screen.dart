@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:intl/intl.dart';
 
 class DietTrackingScreen extends StatefulWidget {
   const DietTrackingScreen({super.key});
@@ -61,6 +62,15 @@ class _DietTrackingScreenState extends State<DietTrackingScreen> {
               ElevatedButton(
                 onPressed: _submitForm,
                 child: Text('Save Meal'),
+              ),
+              SizedBox(height: 20),
+              Text(
+                'Date Format: ${DateFormat('dd/MM/yyyy').format(DateTime.now())}',
+                style: TextStyle(fontSize: 18),
+              ),
+              Text(
+                'Time Format: ${DateFormat('HH:mm:ss').format(DateTime.now())}',
+                style: TextStyle(fontSize: 18),
               ),
             ],
           ),

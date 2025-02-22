@@ -15,37 +15,46 @@ import 'package:bahrfitnesspro/screens/hormone_management_screen.dart';
 import 'package:bahrfitnesspro/screens/wearables_integration_screen.dart';
 import 'package:bahrfitnesspro/providers/user_provider.dart';
 import 'package:bahrfitnesspro/theme.dart';
+import 'package:bahrfitnesspro/services/ai_recommendations_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initializeFirebase();
+  final aiRecommendationsService = AIRecommendationsService();
+  runApp(MyApp(aiRecommendationsService: aiRecommendationsService));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final AIRecommendationsService aiRecommendationsService;
+
+  const MyApp({super.key, required this.aiRecommendationsService});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'BahrFitnessPRO',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('BahrFitnessPRO Home'),
-      ),
-      body: Center(
-        child: Text('Welcome to BahrFitnessPRO!'),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => UserProvider()),
+      ],
+      child: MaterialApp(
+        title: 'BahrFitnessPRO',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: HomeScreen(),
+        routes: {
+          '/login': (context) => LoginScreen(),
+          '/signup': (context) => SignupScreen(),
+          '/forgot_password': (context) => ForgotPasswordScreen(),
+          '/home': (context) => HomeScreen(),
+          '/workout_tracking': (context) => WorkoutTrackingScreen(),
+          '/diet_tracking': (context) => DietTrackingScreen(),
+          '/profile': (context) => ProfileScreen(),
+          '/settings': (context) => SettingsScreen(),
+          '/mental_wellness': (context) => MentalWellnessScreen(),
+          '/gamified_challenges': (context) => GamifiedChallengesScreen(),
+          '/hormone_management': (context) => HormoneManagementScreen(),
+          '/wearables_integration': (context) => WearablesIntegrationScreen(),
+        },
       ),
     );
   }

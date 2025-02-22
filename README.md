@@ -287,3 +287,47 @@ To get started, follow the instructions in the `README.md`.
 - **Additional Testing**: Write more unit and UI tests to cover all features and edge cases.
 - **Documentation**: Update and expand the documentation to include detailed usage instructions, API references, and developer guides.
 - **User Feedback**: Collect and incorporate user feedback to improve the app's usability and functionality.
+
+### AI Recommendations
+
+BahrFitnessPRO now includes AI-driven recommendations to enhance your fitness journey. The AI recommendations are integrated into various screens to provide personalized insights and suggestions.
+
+#### Using AI Recommendations
+
+1. **Diet Plan Management**:
+   - The `DietPlanManagementScreen` displays AI-suggested meal plans, including details like meal items, calories, and macronutrients.
+   - The AI recommendations are fetched and displayed in a list format.
+
+2. **Progress Tracking**:
+   - The `ProgressTrackingScreen` includes a button to get AI-driven insights and recommendations.
+   - This allows users to receive personalized suggestions based on their progress data.
+
+3. **Workout Tracking**:
+   - The `WorkoutTrackingScreen` logs workouts and provides AI-generated workout recommendations based on past performance and goals.
+
+### Localization Support
+
+BahrFitnessPRO supports multiple languages, including Arabic and the Kuwaiti dialect. The localization ensures that the app is culturally relevant and accessible to users in different regions.
+
+#### Key Localization Features
+
+1. **Text Direction**:
+   - Arabic is written from right to left, and the app's UI layout and text alignment are adjusted accordingly.
+
+2. **Date and Number Formats**:
+   - The `intl` package is used to configure date and number formats specific to Kuwaiti Arabic. For example, the date format `dd/MM/yyyy` and the 24-hour clock format `HH:mm:ss`.
+
+3. **Cultural Context**:
+   - The app includes culturally appropriate translations and alternatives for phrases and concepts that may not have direct equivalents in Kuwaiti dialect.
+
+### Wearables Integration
+
+BahrFitnessPRO integrates with various wearables, including Fitbit and Apple Watch, to provide real-time data synchronization and display.
+
+#### Key Wearables Integration Features
+
+1. **Data Synchronization**:
+   - The app syncs data from wearables to provide accurate and up-to-date information on metrics like heart rate and calories burned.
+
+2. **Real-Time Data Display**:
+   - Users can view live stats from their wearables directly within the app, enhancing their fitness tracking experience.
